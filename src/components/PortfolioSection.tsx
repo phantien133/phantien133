@@ -16,7 +16,7 @@ export function PortfolioSection() {
             <div
               className="relative flex min-h-[220px] flex-col justify-end overflow-hidden bg-cover bg-center p-6 text-white"
               style={{
-                backgroundImage: `linear-gradient(135deg, rgba(85,64,174,0.95) ${i * 8}%, rgba(65,47,144,0.88) 100%)`,
+                backgroundImage: `linear-gradient(135deg, rgba(15,118,110,0.95) ${i * 8}%, rgba(17,94,89,0.9) 100%)`,
               }}
             >
               <span className="absolute inset-0 bg-black/10 opacity-10 transition-opacity group-hover:opacity-30" />

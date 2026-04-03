@@ -20,7 +20,7 @@ export function ResumeSection() {
         <a
           href={href}
           download={resumePdf.downloadFileName}
-          className="inline-flex items-center gap-2 rounded bg-primary px-8 py-4 font-header text-base font-bold uppercase tracking-wide text-white shadow transition-colors hover:bg-grey-20 sm:text-lg"
+          className="inline-flex items-center gap-2 rounded bg-primary px-8 py-4 font-header text-base font-bold uppercase tracking-wide text-white shadow transition-colors hover:bg-secondary sm:text-lg"
         >
           <i className="bx bx-download text-2xl" aria-hidden />
           Download PDF
