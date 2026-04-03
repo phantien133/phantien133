@@ -4,7 +4,7 @@ import { assetUrl } from "../lib/assets";
 export function StatisticsSection() {
   return (
     <section
-      className="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24"
+      className="bg-grey-50 bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24"
       style={{
         backgroundImage: `linear-gradient(180deg, rgba(244,243,248,0.94) 0%, rgba(255,255,255,0.97) 100%), url(${assetUrl("assets/img/experience-figure.png")})`,
       }}

@@ -2,7 +2,8 @@ import { profile } from "../data/resume";
 
 export function ContactSection() {
   return (
-    <section className="container py-16 md:py-20" id="contact">
+    <section className="bg-grey-50" id="contact">
+      <div className="container py-16 md:py-20">
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
         Get in touch
       </h2>
@@ -40,6 +41,7 @@ export function ContactSection() {
           </div>
           <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">Vietnam</p>
         </div>
+      </div>
       </div>
     </section>
   );

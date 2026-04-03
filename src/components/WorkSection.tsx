@@ -2,13 +2,11 @@ import { experience } from "../data/resume";
 
 export function WorkSection() {
   return (
-    <section className="container py-16 md:py-20" id="work">
+    <section className="bg-grey-50" id="work">
+      <div className="container py-16 md:py-20">
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-        My work experience
+        Work experience
       </h2>
-      <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-        Highlights from my recent roles
-      </h3>
 
       <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
         <span className="absolute inset-y-0 left-2/5 ml-10 hidden w-0.5 bg-grey-40 md:block" />
@@ -37,15 +35,20 @@ export function WorkSection() {
                     <span className="block pt-2 font-header text-xl font-bold uppercase text-primary">
                       {job.role}
                     </span>
-                    <div className="pt-2">
-                      <span className="block font-body text-black">{job.highlights[0]}</span>
-                    </div>
+                    {job.highlights.length > 0 ? (
+                      <ul className="mt-2 list-disc space-y-2 pl-5 text-left font-body text-black md:pl-6">
+                        {job.highlights.map((h) => (
+                          <li key={h}>{h}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

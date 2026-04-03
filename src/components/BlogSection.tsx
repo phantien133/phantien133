@@ -2,7 +2,7 @@ import { profile } from "../data/resume";
 
 export function BlogSection() {
   return (
-    <section className="bg-grey-50" id="blog">
+    <section className="bg-white" id="blog">
       <div className="container py-16 md:py-20">
         <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
           Elsewhere

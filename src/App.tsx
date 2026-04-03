@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { AboutSection } from "./components/AboutSection";
 import { BlogSection } from "./components/BlogSection";
-import { ClientsSection } from "./components/ClientsSection";
 import { ContactSection } from "./components/ContactSection";
 import { DecorativeStripSection } from "./components/DecorativeStripSection";
 import { HeroSection } from "./components/HeroSection";
 import { PortfolioSection } from "./components/PortfolioSection";
 import { ResumeSection } from "./components/ResumeSection";
-import { ServicesSection } from "./components/ServicesSection";
+import { StrengthsSection } from "./components/StrengthsSection";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { StatisticsSection } from "./components/StatisticsSection";
@@ -22,11 +21,10 @@ export default function App() {
         <SiteHeader mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         <HeroSection />
         <AboutSection />
-        <ServicesSection />
         <PortfolioSection />
-        <ClientsSection />
         <WorkSection />
         <StatisticsSection />
+        <StrengthsSection />
         <ResumeSection />
         <BlogSection />
         <ContactSection />

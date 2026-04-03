@@ -2,17 +2,15 @@ import { projects } from "../data/resume";
 
 export function PortfolioSection() {
   return (
-    <section className="container py-16 md:py-20" id="portfolio">
+    <section className="bg-white" id="portfolio">
+      <div className="container py-16 md:py-20">
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-        Check out my portfolio
+        Key projects
       </h2>
-      <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-        Here&apos;s what I&apos;ve shipped in the past
-      </h3>
       <div className="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
         {projects.map((p, i) => (
           <article
-            key={p.name + p.period}
+            key={p.name + p.role + p.stack}
             className="group mx-auto w-full transform shadow transition-transform hover:scale-105 md:mx-0"
           >
             <div
@@ -22,15 +20,26 @@ export function PortfolioSection() {
               }}
             >
               <span className="absolute inset-0 bg-black/10 opacity-10 transition-opacity group-hover:opacity-30" />
-              <span className="relative font-header text-xl font-bold uppercase leading-snug">{p.name}</span>
-              <span className="relative pt-2 font-body text-sm text-white/90">{p.role}</span>
-              <span className="relative pt-3 font-body text-sm text-white/85">{p.description}</span>
-              <span className="relative pt-3 text-xs font-semibold uppercase tracking-wide text-yellow">
-                {p.stack}
-              </span>
+              {p.name ? (
+                <span className="relative font-header text-xl font-bold uppercase leading-snug">{p.name}</span>
+              ) : null}
+              {p.role ? (
+                <span className="relative pt-2 font-body text-sm text-white/90 whitespace-pre-line">{p.role}</span>
+              ) : null}
+              {p.description ? (
+                <span className="relative pt-3 font-body text-sm text-white/85 whitespace-pre-line">
+                  {p.description}
+                </span>
+              ) : null}
+              {p.stack ? (
+                <span className="relative pt-3 text-xs font-semibold uppercase tracking-wide text-yellow whitespace-pre-line">
+                  {p.stack}
+                </span>
+              ) : null}
             </div>
           </article>
         ))}
+      </div>
       </div>
     </section>
   );

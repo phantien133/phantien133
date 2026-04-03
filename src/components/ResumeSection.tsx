@@ -5,7 +5,8 @@ export function ResumeSection() {
   const href = assetUrl(resumePdf.path);
 
   return (
-    <section className="container py-16 md:py-20" id="resume">
+    <section className="bg-grey-50" id="resume">
+      <div className="container py-16 md:py-20">
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
         Résumé
       </h2>
@@ -24,6 +25,7 @@ export function ResumeSection() {
           <i className="bx bx-download text-2xl" aria-hidden />
           Download PDF
         </a>
+      </div>
       </div>
     </section>
   );
