@@ -2,25 +2,31 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 /**
- * Project Page: https://<user>.github.io/<repo>/
- * - GitHub Actions sets GITHUB_REPOSITORY to "owner/repo" automatically.
- * - Override: GITHUB_REPO_NAME=my-repo or VITE_BASE=/ (user-site root).
+ * GitHub Pages base URL:
+ * - User/org site: repo must be named `<user>.github.io` → live at https://<user>.github.io/ → base `/`
+ * - Project site: repo `foo` → https://<user>.github.io/foo/ → base `/foo/`
+ *
+ * CI sets GITHUB_REPOSITORY (`owner/repo`). Override with VITE_BASE=/ or VITE_BASE=/myrepo/
  */
-function repoSlug(): string {
-  const explicit = process.env.GITHUB_REPO_NAME?.replace(/^\//, "").replace(/\/$/, "");
-  if (explicit) return explicit;
+function productionBase(): string {
   const gh = process.env.GITHUB_REPOSITORY;
   if (gh) {
-    const name = gh.split("/")[1];
-    if (name) return name;
+    const repoName = gh.split("/")[1];
+    if (repoName?.endsWith(".github.io")) return "/";
+    if (repoName) return `/${repoName}/`;
   }
-  // Must match the GitHub repository name (path segment after github.io/username/)
-  return "phantien133";
+
+  const explicit = process.env.GITHUB_REPO_NAME?.replace(/^\//, "").replace(/\/$/, "");
+  if (explicit) return `/${explicit}/`;
+
+  // Local `npm run build` with no env — default to user-site root (repo `username.github.io`).
+  // For a project page instead, run: `GITHUB_REPO_NAME=your-repo vite build`
+  return "/";
 }
 
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
   base:
     process.env.VITE_BASE ??
-    (mode === "production" ? `/${repoSlug()}/` : "/"),
+    (mode === "production" ? productionBase() : "/"),
 }));
