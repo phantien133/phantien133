@@ -8,24 +8,24 @@ export function WorkSection() {
         Work experience
       </h2>
 
-      <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
-        <span className="absolute inset-y-0 left-2/5 ml-10 hidden w-0.5 bg-grey-40 md:block" />
+      <div className="relative mx-auto mt-12 w-full max-w-5xl lg:w-5/6">
+        <span className="absolute inset-y-0 left-[22%] hidden w-0.5 -translate-x-1/2 bg-grey-40 md:block lg:left-[20%]" />
         {experience.map((job) => (
           <div
             key={`${job.company}-${job.period}`}
-            className="mt-8 flex flex-col text-center md:flex-row md:text-left"
+            className="mt-8 flex flex-col gap-6 text-center md:flex-row md:gap-0 md:text-left"
           >
-            <div className="md:w-2/5">
+            <div className="md:w-[22%] md:max-w-[200px] md:shrink-0 lg:w-[20%] lg:max-w-[220px]">
               <div className="flex justify-center md:justify-start">
                 <span className="flex h-auto min-h-[4rem] w-32 shrink-0 items-center justify-center rounded border border-grey-60 bg-grey-50 px-3 text-center font-header text-sm font-bold uppercase leading-tight text-primary">
                   {job.company}
                 </span>
-                <div className="relative ml-3 hidden w-full md:block">
+                <div className="relative ml-2 hidden min-w-0 flex-1 md:block">
                   <span className="absolute inset-x-0 top-1/2 hidden h-0.5 -translate-y-1/2 bg-grey-70 md:block" />
                 </div>
               </div>
             </div>
-            <div className="md:w-3/5">
+            <div className="min-w-0 md:flex-1 md:pl-6 lg:pl-10">
               <div className="relative flex md:pl-18">
                 <span className="absolute top-1 left-8 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block" />
                 <div className="mt-1 flex">
